@@ -13,8 +13,8 @@
         }
 
         function sendmsg(){
-            var obj=document.getElementById("msg");
-            obj.style.backgroundColor("green");
+            window.document.getElementById("msg").style.backgroundColor="green";
+            window.document.getElementById("msg").innerHTML="Hello Javascript";
         }
     </script>
     <style>
@@ -25,7 +25,8 @@
     </style>
 </head>
 <body>
-    <input type="button" value="새 탭 두 개 생성" onclick="twowindows()">
+    <input type="button" value="새 탭 두 개 생성" onclick="twowindows()"><br>
     <input type="button" value="div에 메시지 보내기" onclick="sendmsg()">
+    <div></div>
 </body>
 </html>
