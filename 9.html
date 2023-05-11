@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var state = "light_off.gif";
+        function lighton() {
+            if (state == "light_on.gif") {
+                state = "light_off.gif";
+            } else {
+                state = "light_on.gif";
+            }
+            document.querySelector("img").style.transition="all 2s ease 2s";
+            document.querySelector("img").src=state;
+        }
+    </script>
+    <style>
+        #img{
+
+        }
+    </style>
+</head>
+
+<body>
+    <img id="img" onclick="lighton()" src="light_off.gif" alt="">
+</body>
+
+</html>
