@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //유효성 검사
+        //아이디, 패스워드 input상자가 비어있는지 확인
+        function login() {
+            var id = document.querySelector("#id");
+            var password = document.querySelector("#password");
+            if (id.value == "") {
+                alert("아이디를 입력하십시오.");
+                id.focus();
+            }else if (password.value == "") {
+                alert("비밀번호를 입력하십시오.");
+                password.focus();
+            }else if (id.value.length > 10) {
+                alert("아이디는 10자 이내입니다.");
+                id.value="";
+                id.focus();
+            }else if (password.value.length > 20) {
+                alert("비밀번호는 20자 이내입니다.");
+                password.value="";
+                password.focus();
+            }else{
+                document.forms[0].requestSubmit();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="">
+        아이디: <input type="text" id="id" name="id"><br>
+        비밀번호: <input type="password" id="password" name="password"><br>
+        <input type="button" value="로그인" onclick="login()">
+    </form>
+
+</body>
+
+</html>

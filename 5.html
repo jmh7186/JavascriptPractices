@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function availres() {
+            //시스템의 유효한 해상도(현재 창 크기가 아님에 주의)
+            alert(screen.availWidth+", "+screen.availHeight);
+        }
+        
+        function res() {
+            alert(window.innerWidth+", "+window.innerHeight);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="availres()">버어트은</button>
+    <button onclick="res()">버어트은2</button>
+</body>
+</html>

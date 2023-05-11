@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function red(){
+            document.getElementById("box").style.backgroundColor="red";
+        }
+        function blu(){
+            document.getElementById("box").style.backgroundColor="blue";
+        }
+        function grn(){
+            document.getElementById("box").style.backgroundColor="green";
+        }
+        function rgb(){
+            if (document.getElementById("box").style.backgroundColor=="red") {
+                document.getElementById("box").style.backgroundColor="green";
+            }else if (document.getElementById("box").style.backgroundColor=="green"){
+                document.getElementById("box").style.backgroundColor="blue";
+            }else{
+                document.getElementById("box").style.backgroundColor="red";
+            }
+        }
+        function rgb2(color){
+            document.getElementById("box").style.backgroundColor=color;
+        }
+    
+        // 한 개로 여러가지를 처리할 경우 상태변수를 활용
+        var state=-1;
+        function toggle(){
+            state=(state+1)%3;
+            color="";
+            colorname="";
+            if(state==0){
+                color="red";
+                colorname="빨간색";
+            }else if(state==1){
+                color="green";
+                colorname="초록색";
+            }else if(state==2){
+                color="blue";
+                colorname="파란색";
+            }
+            document.getElementById("box").style.backgroundColor=color;
+            document.querySelector("#box").innerHTML="<b>"+colorname+"</b>";
+            
+            //있는 그대로 삽입(태그 적용 X)
+            // document.querySelector("#box").innerText="<b>"+colorname+"</b>";
+        }
+    </script>
+</head>
+<body>
+    <div id="box" style="width: 200px; height: 200px; text-align: center; font-size: 30px; line-height: 200px"></div>
+    <button onclick="red()">빨간색</button>
+    <button onclick="grn()">녹색</button>
+    <button onclick="blu()">파란색</button>
+    <br><br>
+    <button onclick="rgb()">빨녹파</button>
+    <br><br>
+    <button onclick="rgb2('red')">빨간색</button>
+    <button onclick="rgb2('green')">녹색</button>
+    <button onclick="rgb2('blue')">파란색</button>
+    <br><br>
+    <button onclick="toggle()">토글</button>
+</body>
+</html>
