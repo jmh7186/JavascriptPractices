@@ -12,29 +12,40 @@
         function login() {
             var id = document.querySelector("#id");
             var password = document.querySelector("#password");
-            if (id.value == "") {
-                alert("아이디를 입력하십시오.");
-                id.focus();
-            }else if (password.value == "") {
-                alert("비밀번호를 입력하십시오.");
-                password.focus();
-            }else if (id.value.length > 10) {
-                alert("아이디는 10자 이내입니다.");
-                id.value="";
-                id.focus();
-            }else if (password.value.length > 20) {
-                alert("비밀번호는 20자 이내입니다.");
-                password.value="";
-                password.focus();
-            }else{
-                document.forms[0].requestSubmit();
+            if (id.value == "" || password.value == "") {
+                if (id.value == "" && password.value == "") {
+                    alert("아이디와 비밀번호를 입력하십시오.");
+                    id.focus();
+                } else if (id.value == "") {
+                    alert("아이디를 입력하십시오.");
+                    id.focus();
+                } else {
+                    alert("비밀번호를 입력하십시오.");
+                    password.focus();
+                }
+            } else if (id.value.length > 10 || (password.value.length > 20 || password.value.length < 6)) {
+                if (id.value.length > 10 && password.value.length > 20) {
+                    alert("아이디는 10자, 비밀번호는 6자 ~ 20자 이내입니다.");
+                    id.value = "";
+                    id.focus();
+                } else if (id.value.length > 10) {
+                    alert("아이디는 10자 이내입니다.");
+                    id.value = "";
+                    id.focus();
+                } else {
+                    alert("비밀번호는 6자 ~ 20자 이내입니다.");
+                    password.value = "";
+                    password.focus();
+                }
+            } else {
+                document.forms[0].submit();
             }
         }
     </script>
 </head>
 
 <body>
-    <form action="">
+    <form action="login_proc.html">
         아이디: <input type="text" id="id" name="id"><br>
         비밀번호: <input type="password" id="password" name="password"><br>
         <input type="button" value="로그인" onclick="login()">

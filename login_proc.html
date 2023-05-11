@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>로그인 처리</h1>
+    <script>
+        const url=new URL(location.href);
+        document.write(url.searchParams.get("id")+", "+url.searchParams.get("password")+"<br>");
+        //URL 추출
+        // url.protocol;
+        // url.hostname;
+        // url.port;
+        // url.pathname;
+        // url.searchParams;
+
+        //문자열 위치 찾기
+        // var p = location.href.indexOf("?")+1;
+        // var l = location.href.length;
+        // document.write(location.href.substring(p,l)+"<br>");
+        var id = location.href.substring(location.href.indexOf("id=")+3,location.href.indexOf("&"));
+        var password = location.href.substring(location.href.indexOf("password=")+9,location.href.length);
+        document.write(id+", "+password);
+    </script>
+</body>
+</html>
