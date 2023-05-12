@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        .book{
+            display: inline-block;
+            margin: 20px;
+            background-color: grey;
+            width: 200px;
+            height: 300px;
+            text-align: center;
+            padding-top: 30px;
+        }
+        .book_name,.book_price,.book_pub{
+            border: 1px solid black;
+            margin: 20px;
+            font-size: 20px;
+            color: white;
+        }
+        .book_name{
+            background-color: black;
+        }
+        .book_price{
+            background-color: blue;
+        }
+        .book_pub{
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    
+</body>
+
+ <!-- img폴더의 5개 파일을 웹에 이미지로 표현하시오
+    배열과 반복문을 사용하여 
+    JSON 객체에 5개의 정보(책 이미지, 책 제목, 가격, 출판사)를 넣고 각 이미지 밑에 출력 -->
+    <script>
+        book={
+            img: ["/img/css.png","/img/html.png","/img/jpg.png","/img/js.png","/img/psd.png"],
+            name: ["CSS","HTML","JPG","JS","PSD"],
+            price: ["18,000원","19,000원","20,000원","21,000원","22,000원"],
+            publisher: ["A출판사","B출판사","C출판사","D출판사","E출판사"]
+        }
+        function creImg(){
+            for (i=0; i<book.img.length; i++){
+                document.querySelector("body").innerHTML+=`<div class="book"><div class="book_img"><img src="${book.img[i]}" alt=""></div> <div class="book_name">${book.name[i]}</div> <div class="book_price">${book.price[i]}</div>  <div class="book_pub">${book.publisher[i]}</div>  </div>`;
+                
+            }
+            
+        }
+        creImg();
+    </script>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function pc(cpu, ram, hdd) {
+            this.cpu=cpu;
+            this.ram=ram;
+            this.hdd=hdd;
+            this.printt=prn;
+        }
+
+        function prn(){
+            document.write("cpu: "+this.cpu+"<br>");
+            document.write("ram: "+this.ram+"<br>");
+            document.write("hdd: "+this.hdd+"<br>");
+        }
+        mypc = new pc("i5",8,512);
+        mypc.printt();
+
+        class com{
+            cpu;
+            ram;
+            hdd;
+            constructor(cpu,ram,hdd){
+                this.cpu=cpu;
+                this.ram=ram;
+                this.hdd=hdd;
+            }
+
+            prn(){
+                document.write("cpu: "+this.cpu+"<br>");
+                document.write("ram: "+this.ram+"<br>");
+                document.write("hdd: "+this.hdd+"<br>");
+            }
+        }
+
+        new com("i7",16,1024).prn();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

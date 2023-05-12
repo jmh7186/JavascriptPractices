@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // fetch("10.html")
+        // .then(response=>response.text())
+        // .then(text=>document.querySelector("div").innerHTML=text)
+        
+        fetch("10.html")
+        .then(response=>response.text())
+        .then(text=>document.querySelector("div").innerHTML=text)
+
+        function menu(obj) {
+            mname=obj.innerText;
+            document.querySelector("#click").innerHTML+=mname+"<br>";
+        }
+        function del() {
+            document.querySelector("#click").innerHTML="";
+        }
+    </script>
+</head>
+<body>
+    <div id="main"></div>
+</body>
+</html>

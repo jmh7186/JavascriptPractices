@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "simple.xml", true);
+        xhttp.send();
+        xhttp.onload = function () {
+            parser = new DOMParser();
+            xmldoc = parser.parseFromString(this.responseText, "text/xml");
+        }
+
+        function getfood(i) {
+            document.querySelector("h2").innerHTML = "메뉴명: ";
+            document.querySelector("#p").innerHTML = "가격: ";
+            document.querySelector("#d").innerHTML = "설명: "; 
+            document.querySelector("#c").innerHTML = "칼로리: ";
+            document.querySelector("h2").innerHTML += xmldoc.getElementsByTagName("name")[i-1].childNodes[0].nodeValue;
+            document.querySelector("#p").innerHTML += xmldoc.getElementsByTagName("price")[i-1].childNodes[0].nodeValue;
+            document.querySelector("#d").innerHTML += xmldoc.getElementsByTagName("description")[i-1].childNodes[0].nodeValue;
+            document.querySelector("#c").innerHTML += xmldoc.getElementsByTagName("calories")[i-1].childNodes[0].nodeValue;
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h1>음식메뉴</h1>
+    <h2>메뉴명: </h2>
+    <p id="p">가격: </p>
+    <p id="d">설명: </p>
+    <p id="c">칼로리: </p>
+    <button onclick="getfood(1)">메뉴1</button>
+    <button onclick="getfood(2)">메뉴2</button>
+    <button onclick="getfood(3)">메뉴3</button>
+    <button onclick="getfood(4)">메뉴4</button>
+    <button onclick="getfood(5)">메뉴5</button>
+</body>
+
+</html>

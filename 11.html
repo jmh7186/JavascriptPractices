@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let car1 = "SAAB";
+        let car2 = "Volvo";
+        let car3 = "BMW";
+        document.write(car1 + " " + car2 + " " + car3 + "<br>");
+        document.write("<br>");
+
+        //배열은 []
+        let cars = ["SAAB", "Volvo", "BMW", "SAAB", "Volvo", "BMW"];
+        for (i in cars) {
+            document.write(cars[i] + "<br>");
+        }
+        document.write("<br>");
+
+        cars.forEach(element => {
+            document.write(element + "<br>");
+        });
+        document.write("<br>");
+
+        //객체 형태의 저장 방법 { } => 속성=값 의 형태를 가짐
+        person = {
+            firstName: "Hong",
+            lastName: "Gil-dong",
+            age: 23
+        }
+        document.write(person.firstName);
+        document.write("<br>");
+        document.write(person.lastName);
+        document.write("<br>");
+        document.write(person.age);
+        document.write("<br>");
+
+        //문제: 우리 집 멍뭉이는 00살이다. 를 출력
+        doggy = {
+            dname: "깜상",
+            dage: 7
+        }
+        document.write(`우리 집 ${doggy.dname}이는 ${doggy.dage}살이다.`);
+
+        pc = {
+            cpu: "Intel 4.5GHz",
+            ram: "SMASNUG 8GB",
+            hard: "TOSHIBA 2TB",
+            info() {
+                document.write(`${this.cpu}, ${this.ram}, ${this.hard}`);
+            }
+        }
+        document.write("<br>");
+        pc.info();
+        document.write("<br>");
+        document.write("<br>");
+
+        score={
+            info:{
+                name: "홍길동",
+                id: "123123"
+            },
+            kor: [100,20],
+            eng: 90,
+            math: 80,
+            quarter: [300,350,200,100],
+            total: undefined
+        }
+        document.write(score.total);
+        document.write("<p><p>");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function exec() {
+            var text = "<books><book><title>책 제목1</title><author>저자1</author><publisher>출판사1</publisher><price>가격1</price><ISBN>1111</ISBN></book></books>";
+            parser = new DOMParser();
+            xmldoc=parser.parseFromString(text,"text/xml");
+            document.querySelector("div").innerHTML=xmldoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+        }
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <button onclick="exec()">실행</button>
+</body>
+
+</html>

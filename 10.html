@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function menu(obj) {
-            mname=obj.innerText;
-            document.querySelector("div").innerHTML+=mname+"<br>";
-        }
-        function del() {
-            document.querySelector("div").innerHTML="";
-        }
+        // function menu(obj) {
+        //     mname=obj.innerText;
+        //     document.querySelector("div").innerHTML+=mname+"<br>";
+        // }
+        // function del() {
+        //     document.querySelector("div").innerHTML="";
+        // }
     </script>
 </head>
 <body>
     <H1>오늘의 메뉴는</H1>
-    <div><br></div>
+    <div id="click"><br></div>
     <button onclick="menu(this)">돈까스</button><br>
     <button onclick="menu(this)">햄버거</button><br>
     <button onclick="menu(this)">스파게티</button><br>

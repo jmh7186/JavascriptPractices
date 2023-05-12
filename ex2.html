@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var text;
+        // fetch("simple.xml")
+        // .then((response) => response.text())
+        // .then((xmldoc) => new DOMParser().parseFromString(xmldoc, "text/xml"))
+        // .then(function(xml) {
+        //     console.log(xml);
+        // });
+        // text=xml;
+        
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "simple.xml", true);
+        xhttp.send();
+        xhttp.onload = function () {
+            parser = new DOMParser();
+            xmldoc = parser.parseFromString(this.responseText, "text/xml");
+            obj=xmldoc.getElementsByTagName("food");
+
+            // document.querySelector("body").innerHTML=obj[0].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+            // document.querySelector("body").innerHTML=obj[0].getElementsByTagName("name")[0].attributes.getNamedItem("test").nodeName;
+            document.querySelector("body").innerHTML=obj[0].getElementsByTagName("name")[0].attributes.getNamedItem("test").nodeValue;
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

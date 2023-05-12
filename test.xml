@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<letters>
+<letter>
+    <to>보낼사람</to>
+    <from>보내는 사람</from>
+    <title>제목</title>
+    <content>내용</content>
+</letter>
+
+<letter>
+    <to>보낼사람2</to>
+    <from>보내는 사람2</from>
+    <title>제목2</title>
+    <content>내용2</content>
+</letter>
+</letters>

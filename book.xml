@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+    <book category="computer">
+        <title>책 제목1</title>
+        <author>저자1</author>
+        <publisher>출판사1</publisher>
+        <price>가격1</price>
+        <ISBN></ISBN>
+    </book>
+    <book category="cooking">
+        <title>책 제목2</title>
+        <author>저자2</author>
+        <publisher>출판사2</publisher>
+        <price>가격2</price>
+        <ISBN></ISBN>
+    </book>
+    <book category="children">
+        <title>책 제목3</title>
+        <author>저자3</author>
+        <publisher>출판사3</publisher>
+        <price>가격3</price>
+        <ISBN></ISBN>
+    </book>
+</books>

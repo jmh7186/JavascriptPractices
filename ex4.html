@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            display: flex;
+        }
+
+        ul {
+            background-color: grey;
+            width: 200px;
+            list-style-type: none;
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        li {
+            margin: 10px;
+        }
+
+        #title {
+            background-color: yellow;
+        }
+
+        #price {
+            background-color: aqua;
+        }
+
+        #pub {
+            background-color: green;
+        }
+        img{
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- <ul><li><img src="./img/css.png" alt=""></li><li id="title">제목</li><li id="price">가격</li><li id="pub">출판사</li></ul> -->
+        <img src="" alt="">
+    </div>
+</body>
+
+<!-- img폴더의 5개 파일을 웹에 이미지로 표현하시오
+    배열과 반복문을 사용하여 
+    JSON 객체에 5개의 정보(책 이미지, 책 제목, 가격, 출판사)를 넣고 각 이미지 밑에 출력 -->
+<script>
+    book = {
+        img: ["css.png", "html.png", "jpg.png", "js.png", "psd.png","book2.jpg"],
+        name: ["CSS", "HTML", "JPG", "JS", "PSD","세이노의 가르침"],
+        price: ["18,000원", "19,000원", "20,000원", "21,000원", "22,000원","18,000원"],
+        publisher: ["A출판사", "B출판사", "C출판사", "D출판사", "E출판사","데이원"]
+    }
+    function creBook() {
+        for (i = 0; i < book.img.length; i++) {
+            document.querySelector("div").innerHTML +=
+                `<ul id="books_${i}">
+                    <li><img src="/img/${book.img[i]}" alt=""></li>
+                    <li id="title">${book.name[i]}</li>
+                    <li id="price">${book.price[i]}</li>
+                    <li id="pub">${book.publisher[i]}</li>
+                </ul>`;
+        }
+    }
+    creBook();
+</script>
+
+</html>
