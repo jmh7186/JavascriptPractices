@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function insert(){
+            
+            const newrow = document.querySelector("table").insertRow();
+            
+            newrow.insertCell(0).innerText = document.querySelector("#id").value;
+            newrow.insertCell(1).innerText = document.querySelector("#name").value;
+            newrow.insertCell(2).innerText = document.querySelector("#tel").value;
+
+            document.querySelector("#id").value = "";
+            document.querySelector("#name").value = "";
+            document.querySelector("#tel").value = "";
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li><input type="text" id="id"></li>
+        <li><input type="text" id="name"></li>
+        <li><input type="text" id="tel"></li>
+        <li><input type="button" id="send" value="등록" onclick="insert()"></li>
+    </ul>
+    <table border="1">
+        <tr><td>번호</td><td>이름</td><td>전화번호</td></tr>
+        <tr><td>1</td><td>홍길동</td><td>010-1111-1111</td></tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 600px;
+        }
+
+        tr:hover {
+            background-color: greenyellow;
+        }
+
+        #detail {
+            border: 2px solid black;
+            width: 596px;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <table style="border: 2px solid black;">
+        <th colspan="3" style="background-color: white;">일별 박스오피스 (5/14 기준)</th>
+    </table>
+    <div id="detail">
+
+    </div>
+</body>
+<script>
+    fetch("http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20230514")
+        .then(res => res.text())
+        .then(text => {
+            movieList = JSON.parse(text).boxOfficeResult.dailyBoxOfficeList;
+            for (i in movieList) {
+                document.querySelector("table").innerHTML += `<tr onmouseenter="showDetail(${i})">
+                                                                <td>${movieList[i].rank}위</td>
+                                                                <td>(${movieList[i].rankInten}):</td>
+                                                                <td>${movieList[i].movieNm}</td>
+                                                            </tr>`;
+            }
+        });
+
+    function showDetail(i) {
+        document.querySelector("#detail").innerHTML = `영화 제목: ${movieList[i].movieNm}<br>
+                                                     영화 당일 관람수: ${movieList[i].audiCnt}<br>
+                                                     영화 누적 관람수: ${movieList[i].audiAcc}<br>
+                                                     영화 개봉일: ${movieList[i].openDt}<br>`;
+        document.querySelector("#detail").style.visibility = "visible";
+    }
+</script>
+
+</html>
+
+<!-- http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20230514 -->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        personobj={
+            name: "kim",
+            age: 30
+        };
+
+        persontext='{"name": "kim","age": 30}';
+
+        console.log(personobj.name);
+        console.log(JSON.parse(persontext).name); //문제발생
+        
+        //오브젝트를 출력하는 방법
+        console.log(personobj["name"]);
+        console.log(personobj["age"]);
+
+        //text -> json 변환 : JSON.parse(text);
+        //json -> text 변환 : 
+        phonebook = {
+            name: "Park",
+            tel: "010-1111-1111"
+        };
+        txt = JSON.stringify(phonebook);
+        console.log(txt);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

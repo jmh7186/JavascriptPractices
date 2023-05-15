@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //웹상에서 데이터를 보내는 방법
+        //1. url을 이용하는 방법
+        //  ?id=admin&password=1234
+        //2. ajax를 이용하는 방법
+
+        //3. fetch, XMLHttpRequest 객체 및 API함수를 이용하는 방법
+
+        //아래 변수는 문자열이다.
+        let text='{"employees": [{"name": "Park", "age":23},{"name": "Lee", "age":25},{"name": "Kim", "age":30}]}';
+
+        //아래 변수는 객체이다.
+        let obj = {
+            "employees": [
+                {"name": "Park", "age":23},
+                {"name": "Lee", "age":25},
+                {"name": "Kim", "age":30}
+            ]
+        };
+
+        text2obj = JSON.parse(text);
+        alert(text2obj.employees[2].name);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

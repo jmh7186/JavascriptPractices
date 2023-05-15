@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function exec_a() {
+            ajax = new XMLHttpRequest(); //txt, HTML(XML), json
+            ajax.open("get", "https://www.w3schools.com/xml/note.xml");
+            ajax.send();
+
+            ajax.onload = function() {
+                document.querySelector("div").innerHTML = this.responseText;
+            }
+        }
+
+        function exec_f(){
+            fetch("test.json")
+            .then(response => response.text())
+            .then(data => document.querySelector("div").innerHTML = data);
+        }
+        
+        function exec_f2(){
+            fetch("test.txt")
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector("div").innerHTML = data;
+                console.log(data);
+            });
+        }
+
+    </script>
+    <style>
+        h1{
+        color: gold;  
+        }
+        p{
+            color: orangered;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>자바스크립트에 사용되는 기술</h1>        
+    <p>XMLHttpRequest, fetch, jquery-ajax</p>
+    <div>
+
+    </div>
+    <button onclick="exec_a()">텍스트 파일 불러오기</button>
+    <br><br>
+    <button onclick="exec_f()">텍스트 파일 불러오기</button>
+    <br><br>
+    <button onclick="exec_f2()">텍스트 파일 불러오기</button>
+</body>
+
+</html>
