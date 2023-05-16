@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    정류소 검색 <input type="text" name="busstop" id="busstop"><br>
+    <button onclick="search()">검색</button>
+    <div></div>
+</body>
+<script>
+    function search(){
+        var keyword = document.querySelector("input").value;
+        fetch(`https://apis.data.go.kr/6410000/busstationservice/getBusStationList?serviceKey=WpPySHqOm1qIYdMjmC1LhgGOd6mF9ZjOS6FQwLkv7%2BBRFwSn3wiq2%2F5FWQ1gdGJjOKI%2Bn98PrKsdk42w7uxaQQ%3D%3D&keyword=${keyword}`)
+        .then(res => res.text())
+        .then(data => {
+            document.querySelector("div").innerHTML = "";
+            xmlParser = new DOMParser();
+            xmlDoc = xmlParser.parseFromString(data, "text/xml");
+            
+            for(i=0; i<xmlDoc.getElementsByTagName("busStationList").length;i++){
+                document.querySelector("div").innerHTML += xmlDoc.getElementsByTagName("stationName")[i].textContent+' = '+xmlDoc.getElementsByTagName("stationId")[i].textContent+'<br>';
+            }
+            
+        });
+    }
+</script>
+</html>
+
+<!-- http://openapi.gbis.go.kr/ws/rest/busstationservice?serviceKey=1234567890&keyword=%EC%8B%A0%EC%95%88%EC%9D%B8%EC%8A%A4%EB%B9%8C -->

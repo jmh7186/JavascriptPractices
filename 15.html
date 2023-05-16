@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="600" style="border: 2px solid black"></canvas>
+</body>
+<script>
+    //캔버스 사용
+    //1. 객체를 획득한다.(화면을 선택)
+    c=document.querySelector("canvas");
+    ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.strokeStyle="red";
+    ctx.lineWidth=1;
+    x=0;
+    y=300;
+    ctx.moveTo(x,y);
+    var interval = setInterval(() => {
+        ctx.lineTo(x++,y);
+        ctx.stroke();
+        if(i>600){
+            clearInterval(interval);
+        }
+    }, 10);
+</script>
+</html>

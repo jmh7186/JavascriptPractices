@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    arr=[1,2,3,4,5];
+    for(i in arr){
+        document.querySelector("body").innerHTML +=arr[i]+"<br>";
+    }
+    json={a:"student",b:[1,2,3,4,5], c:arr, d:{d1:11,d2:22}};
+    for(i in json.b){
+        document.querySelector("body").innerHTML +=json.d.d1+"<br>";
+    }
+</script>
+</html>
